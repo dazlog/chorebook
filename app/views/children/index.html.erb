@@ -4,7 +4,7 @@
 	
 <% @children.each do |child| %>
  <div class="well">
-	  <%= image_tag (child.image_url(:thumb)), class: "feature" %>
+	  <%# image_tag (child.image_url(:thumb)), class: "feature" %>
     <%= link_to child.name, child_path(child) %>
     <%= child.age %> years old
     <span class="admin">
