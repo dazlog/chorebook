@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  image: MyString
+  dob: 2012-12-28
+  bank: 1
+  total: 1
+  age: 1
+
+two:
+  name: MyString
+  image: MyString
+  dob: 2012-12-28
+  bank: 1
+  total: 1
+  age: 1
