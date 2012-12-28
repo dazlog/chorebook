@@ -1,35 +1,258 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @child.name %>
-</p>
-
-<p>
-  <b>Image:</b>
-  <%= @child.image %>
-</p>
-
-<p>
-  <b>Dob:</b>
-  <%= @child.dob %>
-</p>
-
-<p>
-  <b>Bank:</b>
-  <%= @child.bank %>
-</p>
-
-<p>
-  <b>Total:</b>
-  <%= @child.total %>
-</p>
-
-<p>
-  <b>Age:</b>
-  <%= @child.age %>
-</p>
 
 
-<%= link_to 'Edit', edit_child_path(@child) %> |
-<%= link_to 'Back', children_path %>
+
+
+
+
+
+
+
+<body class="new-voices-page en">
+
+<header id="top-bar">
+  <div class="main-col">
+
+    <a href="#menu" class="menu-button">Menu</a>
+
+  </div>
+</header>
+<header id="page-header">
+  <div class="main-col">
+    <div id="menu">
+      <ul class="site-nav clearfix">
+        <!-- <li class="nav-golden"><a href="./golden-tweets.html">Golden Tweets</a></li>
+               <li class="nav-pulse"><a href="./pulse-of-the-planet.html">Pulse of the planet</a></li> -->
+        <!-- <li class="nav-only"><a href="./only-on-twitter.html">Only on Twitter</a></li> -->
+                <li class="nav-trends"><a href="./trends.html">Children</a></li>
+                <li class="nav-voices"><a href="./new-voices.html">Chores</a></li> 
+        <li class="nav-my"><a href="./your-year.html?section=new-voices">Rewards</a></li>
+      </ul>
+    </div>
+    <h1 id="page-title">Chorebook</h1>
+    <div id="desktop-nav">
+      <ul class="site-nav clearfix">
+        <!-- <li class="nav-golden"><a href="./golden-tweets.html">Golden Tweets</a></li>
+               <li class="nav-pulse"><a href="./pulse-of-the-planet.html">Pulse of the planet</a></li> -->
+        <li class="nav-only"><a href="./only-on-twitter.html">Children</a></li>
+        <li class="nav-trends"><a href="./trends.html">Chores</a></li>
+        <li class="nav-voices"><a href="./new-voices.html">Rewards</a></li>
+        <li class="nav-my"><a href="./your-year.html?section=new-voices">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+
+
+<div id="content" class="clearfix">
+
+<div class="main-col">
+
+
+	<div class="voices-group article-item">
+    <div class="article-item-content">
+      
+      <%# image_tag @child.image_url(:thumb), class: "feature" %>
+		  <%= @child.name %>
+	    aged: <%= @child.age %>   |
+	    <%= link_to (image_tag 'edit_16.png'), edit_child_path(@child) %> 
+	    <b>Bank:</b> <%= @child.bank %> Pts</span>
+	    <%= link_to "back", children_path %>
+    </div>
+  </div>
+
+  <div class="js-masonry">
+      <div class="voices-group article-item">
+        <div class="article-item-content">
+          <h2 class="tits">Chores</h2>
+          <ul>
+              <li class="new-voices-user">
+                <ul class="incomplete">
+									<% @child.chores.incomplete.each do |chore| %>          
+									  <li class="user-component"><%= image_tag @child.image_url(:tiny), class: "avatar" %>
+										<span class="fullname"><%= chore.name %></span> 
+										<span class="screen-name"><%= chore.due_date.strftime("due: %A") %></span>  
+										<span class="admin"><%# link_to image_tag("tick.png"), complete_chore_path(@child.id, chore.id) %>
+										<%= link_to (image_tag'1354409256_delete.png'), delete_chore_path(@child.id, chore.id) %>
+										</span><a href="" class="lazy-twitter-follow-button" data-show-count="false" data-lang="en" data-size="large" data-show-screen-name="false" data-twitter-lazy-load="twitter-follow-button"><%= button_to "+#{chore.points} pts", "#", class: "done_but" %></a></li>
+							  	<% end %>
+								</ul>
+              
+              </li>
+ 
+              
+              <li class="view-more">
+                <a class="view-more-button button" href="#">Add a chore</a>
+              </li>
+              <div class="more-users">
+    					<%= form_for [@child, @child.chores.new] do |f| %>
+							  <%= f.text_field :name, placeholder: 'describe chore...' %> 
+							  <%= f.select :name, options_for_select([["Common chores...", "cc"],["Lay the table", "Lay the table"], ["Read your homework book", "Read your homework book"], ["Tidy your room", "Tidy your room"],["Pick up your toys", "Pick up your toys"],["Phonics homework", "Phonics homework"],["Sweep the floor", "Sweep the floor"],["Clean the table", "Clean the table"],["Brush your teeth", "Brush your teeth"]] ) %>
+
+								<%= f.select :points, options_for_select([["points...", "points"],["5", "5"], ["10", "10"], ["20", "20"],["30", "30"],["40", "40"],["50", "50"],["75", "75"],["100", "100"]] ) %>
+								<%= f.text_field :due_date, placeholder: 'due date...' %>
+							  <%= f.submit %>
+							<% end %>
+							</div>
+          
+
+
+                   
+              <%# link_to image_tag"Whatevs", whatever_path, class: "user-component" %>   
+                 
+              </div>
+          </ul>
+        </div>
+      </div>
+
+
+			<div class="js-masonry">
+		      <div class="voices-group article-item">
+		        <div class="article-item-content">
+		          <h2 class="tits">Rewards</h2>
+		          <ul>
+		              <li class="new-voices-user">
+		                <ul class="incomplete">
+											<% @child.rewards.incomplete.each do |reward| %>          
+											  <li class="user-component"><%= image_tag reward.image_url(:tiny), class: "avatar" %>
+												<span class="fullname"><%= reward.name %></span>  
+												<span class="admin"><%# link_to image_tag("tick.png"), complete_chore_path(@child.id, chore.id) %>
+												<%= link_to (image_tag'1354409256_delete.png'), delete_reward_path(@child.id, reward.id) %>
+												</span><a href="" class="lazy-twitter-follow-button" data-show-count="false" data-lang="en" data-size="large" data-show-screen-name="false" data-twitter-lazy-load="twitter-follow-button"><%= button_to "-#{reward.costs} pts", "#", class: "done_but" %></a></li>
+									  	<% end %>
+										</ul>
+
+		              </li>
+
+
+		              
+
+
+
+
+      
+              
+              
+              <li class="view-more">
+                <a class="view-more-button button" href="#">Add a Reward</a>
+              </li>
+              <div class="more-users">
+              <%= form_for [@child, @child.rewards.new] do |f| %>
+							  <%= f.text_field :name, placeholder: 'describe reward...' %> 
+								<%= f.number_field :costs, placeholder: 'points...' %> 
+								<%= f.file_field :image %>
+							  <%= f.submit %>
+							<% end %>
+							</div>
+    
+          </ul>
+        </div>
+      </div>
+     
+              
+        </div>
+      </div>
+  </div>
+
+</div> 
+
+</div> 
+
+
+<footer id="site-footer">
+
+  <div class="primary-footer">
+    <div class="main-col">
+
+      <div class="past-years-aligner">
+        <div class="site-title">
+          <a href="../">
+            
+            <span class="site-title-text">Chorebook</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="nav link-list">
+        <ul class="site-nav clearfix">
+          <li class="nav-golden"><a href="./golden-tweets.html">Page 1</a></li>
+          <li class="nav-pulse"><a href="./pulse-of-the-planet.html">Page 3</a></li>
+          <li class="nav-only"><a href="./only-on-twitter.html">Page 4</a></li>
+          <li class="nav-trends"><a href="./trends.html">Page 5</a></li>
+          <li class="nav-voices"><a href="./new-voices.html">Page 6</a></li>
+          <li class="nav-my"><a href="./your-year.html?section=new-voices">Some blah</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="secondary-footer">
+    <div class="main-col">
+      <p class="copyright">&copy; 2012 Chorebook</p>   
+    </div>
+  </div>
+
+</footer>
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+

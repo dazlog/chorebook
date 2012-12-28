@@ -1,33 +1,24 @@
-<h1>Listing children</h1>
+<div class="hero-unit">
+	<h3>Children</h3>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Image</th>
-    <th>Dob</th>
-    <th>Bank</th>
-    <th>Total</th>
-    <th>Age</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+	
 <% @children.each do |child| %>
-  <tr>
-    <td><%= child.name %></td>
-    <td><%= child.image %></td>
-    <td><%= child.dob %></td>
-    <td><%= child.bank %></td>
-    <td><%= child.total %></td>
-    <td><%= child.age %></td>
-    <td><%= link_to 'Show', child %></td>
-    <td><%= link_to 'Edit', edit_child_path(child) %></td>
-    <td><%= link_to 'Destroy', child, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+ <div class="well">
+	  <%= image_tag (child.image_url(:thumb)), class: "feature" %>
+    <%= link_to child.name, child_path(child) %>
+    <%= child.age %> years old
+    <span class="admin">
+    <%= link_to (image_tag 'edit_16.png'), edit_child_path(child) %>
+    <%= link_to (image_tag'1354409256_delete.png'), child, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </span>
+   <span id="child_bank">Current bank: <%= child.bank %></span>
+   <%= child.total %>
+ </div>  
 <% end %>
-</table>
 
-<br />
+	<div class="well"><%= link_to 'Add Child', new_child_path %></div>
 
-<%= link_to 'New Child', new_child_path %>
+
+</div>
+
+

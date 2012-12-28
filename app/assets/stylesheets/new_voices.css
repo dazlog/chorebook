@@ -1,0 +1,109 @@
+/* New voices
+------------------------- */
+
+.voices-group {
+}
+
+.voices-group ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.new-voices-user {
+  border-top: 1px solid #EEE;
+  position: relative;
+  font-size: 14px;
+}
+
+.new-voices-user:first-child { border-top: none; }
+
+.new-voices-user .user-component {
+   border-top: 1px solid #EEE;
+  display: block;
+  height: 68px;
+  position: relative;
+  padding: 10px 0 10px 58px;
+}
+
+.new-voices-user .user-component:hover {
+  background: #FCFCFC;
+  text-decoration: none;
+}
+
+.new-voices-user .avatar {
+  display: block;
+  position: absolute;
+  left: 0;
+  border-radius: 4px;
+}
+
+.new-voices-user .fullname {
+  display: block;
+  font-weight: 600;
+  color: #333;
+}
+
+.new-voices-user .screen-name {
+  color: #999;
+}
+
+.new-voices-user abbr {
+  color: #00ACEE;
+  border: none;
+}
+
+.new-voices-user .verified {
+  display: inline-block;
+  width: 14px;
+  vertical-align: top;
+  margin-top: 2px;
+}
+
+.new-voices-user .screen-name b {
+  font-weight: normal;
+}
+
+
+.new-voices-user .twitter-follow-button,
+.new-voices-user .lazy-twitter-follow-button {
+  position: absolute;
+  right: 0;
+  top: 19px;
+}
+
+/* ---- more ---- */
+
+.new-voices-page .view-more-button {
+  display: block;
+  text-transform: uppercase;
+  color: white;
+  background-color: #00ACEE;
+  text-shadow: 0 -1px hsla(0, 0%, 0%, 0.4);
+  padding: 15px;
+  margin-top: 10px;
+}
+
+/* hide more users by default */
+/*.more-users {
+  display: none;
+}*/
+
+/* Desktop media query
+------------------------- */
+
+@media screen and (min-width: 720px) {
+
+  .new-voices-user {
+    font-size: 16px;
+  }
+
+  .new-voices-user .fullname {
+    font-size: 18px;
+  }
+
+  .new-voices-user .verified {
+    width: 18px;
+  }
+
+} /* end media query */

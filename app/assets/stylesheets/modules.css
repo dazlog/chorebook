@@ -1,0 +1,156 @@
+/* ------------------------
+Modules
+stuff used all over the site
+------------------------- */
+
+/* main column for center-aligning content */
+.main-col {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.article-item-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: #999;
+  margin: 0;
+  margin-bottom: 0.4em;
+  line-height: 1.2;
+}
+
+#content {
+  background: white;
+}
+
+.group-title {
+  clear: both;
+  font-size: 24px;
+  padding: 0.3em 0;
+  margin: 0 3% 20px;
+  border-bottom: 4px solid;
+}
+
+/* ---- site title ---- */
+
+.site-title {
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 50px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.site-title a:after {
+  content: '2012';
+}
+
+.site-title-text {
+  display: none;
+}
+
+.site-title .logo {
+  display: inline-block;
+  width: 28px;
+  height: 23px;
+  vertical-align: top;
+  margin-top: 12px;
+  margin-right: 10px;
+}
+
+.site-title a {
+  color: white;
+}
+
+.site-title a:hover, #site-footer a:hover {
+  color: #00ACED;
+  text-decoration: none;
+}
+
+/* ----- button ------ */
+
+
+.button {
+  background-color: #F5F5F5;
+  background-image: -webkit-linear-gradient( top, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.1) );
+  background-image:    -moz-linear-gradient( top, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.1) );
+  background-image:                gradient( top, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.1) );
+  padding: 10px;
+  color: #0c8fc1;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 0 1px white;
+  border-radius: 4px;
+}
+
+.button:hover {
+  background-color: #FFF;
+  color: #08D;
+  text-decoration: none;
+}
+
+
+.masonry-brick {
+  width: 100%;
+}
+
+/* Clearfix
+------------------------- */
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+/* Desktop media query
+------------------------- */
+
+@media screen and (min-width: 720px) {
+
+#content {
+  background: transparent;
+}
+
+.main-col {
+  max-width: 940px;
+  padding: 0 2%;
+}
+
+.site-title {
+  text-align: left;
+}
+
+.site-title-text {
+  display: inline;
+}
+
+.site-title a:after {
+  content: '';
+}
+
+/* ----  ---- */
+
+.masonry-brick {
+  width: auto;
+}
+
+.group-title {
+  width: 100%;
+  font-size: 50px;
+  padding: 0.3em 0;
+  margin: 0.2em 0 0 0;
+  border-top: 1px solid #AAA;
+  border-bottom: none;
+}
+
+
+} /* end media query */

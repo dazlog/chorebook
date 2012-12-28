@@ -1,0 +1,253 @@
+/* site header
+------------------------- */
+
+#top-bar {
+  background: #2B2B2B;
+  color: white;
+  height: 10px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+#top-bar a {
+  color: white;fin
+}
+
+#top-bar a:hover, a.menu-button {
+  color: #00ACEE;
+  text-decoration: none;
+}
+
+.entry {
+  display: none;
+}
+
+a.menu-button {
+  text-decoration: none;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  background: #444;
+  border-radius: 4px;
+}
+
+a.menu-button:hover,
+a.menu-button:focus {
+  color: white;
+  background: black;
+}
+
+
+/* ------ page title ------ */
+
+#page-title {
+  margin: 0;
+  padding: 0.25em 3%;
+  font-size: 26px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.3);
+  line-height: 1.2;
+}
+
+#desktop-nav { display: none; }
+
+.site-nav,
+.site-nav li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#menu .site-nav {
+  background: #00ACEE;
+  padding: 70px 0 20px;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 44px;
+}
+
+#menu .site-nav li a {
+  display: block;
+  padding-left: 20px;
+  position: relative;
+  color: #333;
+  margin-right: 10px;
+}
+
+#menu .site-nav li a:hover {
+  text-decoration: none;
+}
+
+#menu .site-nav li a:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #333;
+}
+
+#menu .site-nav li a:hover:before {
+  width: 15px;
+}
+
+.intro {
+  color: white;
+  padding: 0 3% 3%;
+}
+
+.intro-text {
+  display: block;
+  margin-bottom: 1.0em;
+}
+
+.tweet-this-page {
+  display: block;
+}
+
+@media screen and (min-width: 720px) {
+
+#top-bar {
+  position: relative;
+}
+
+#top-bar .menu-button {
+  display: none;
+}
+
+.entry {
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  font-size: 16px;
+  color: #777;
+}
+
+.entry a {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 0 0 4px 4px;
+}
+
+#top-bar .entry .sign-up a {
+}
+
+
+/* page header
+-------------------------- */
+
+#page-header {
+  background: #00ACEE;
+  color: white;
+  padding: 0 0 20px 0;
+}   
+
+/* show menu below */
+#desktop-nav { display: block; }
+#menu { display: none; }
+
+#page-title {
+  font-size: 70px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#desktop-nav .site-nav {
+  display: table;
+  position: relative;
+  width: 100%;
+  background: #333;
+  background: hsla(0, 0%, 0%, 0.2);
+  padding: 0;
+  line-height: 1.45;
+  border-radius: 5px;
+  box-shadow: 0 1px hsla(0, 0%, 100%, 0.25), inset 0 1px hsla(0, 0%, 0%, 0.1);
+}
+
+#desktop-nav .site-nav li {
+  display: table-cell;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.45;
+  text-align: center;
+}
+
+
+
+#desktop-nav .site-nav li a {
+  display: block;
+  padding: 20px 15px;
+  margin: 0;
+  font-weight: 700;
+  color: white;
+}
+
+#desktop-nav .site-nav li a:hover {
+  background-color: hsla(0, 0%, 100%, 0.1);
+  text-decoration: none;
+}
+
+
+/* selected page */
+.golden-page     #desktop-nav .site-nav li.nav-golden a,
+.only-page       #desktop-nav .site-nav li.nav-only a,
+.pulse-page      #desktop-nav .site-nav li.nav-pulse a,
+.trends-page     #desktop-nav .site-nav li.nav-trends a,
+.new-voices-page #desktop-nav .site-nav li.nav-voices a {
+  background: hsla(0, 0%, 0%, 0.1);
+}
+
+
+#desktop-nav .site-nav li.nav-my {
+  padding: 10px;
+}
+
+/* my year on twitter button on right */
+#desktop-nav .site-nav li.nav-my a {
+  background-color: #F5F5F5;
+  background-image: -webkit-linear-gradient( top, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.1) );
+  background-image:    -moz-linear-gradient( top, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.1) );
+  background-image:         linear-gradient( top, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.1) );
+  padding: 10px 0;
+  border-radius: 4px;
+  color: #0c8fc1;
+  text-shadow: 0 1px white;
+}
+
+#desktop-nav .site-nav li.nav-my a:hover {
+  background-color: white;
+  color: #00ACED;
+}
+
+.intro {
+  font-size: 28px;
+  line-height: 1.25;
+  color: #505050;
+  padding: 3% 0;
+}
+
+.intro-text {
+  margin-right: 0.5em;
+}
+
+.intro-text {
+  display: inline;
+}
+
+.intro .tweet-this-page {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+} /* end media query */

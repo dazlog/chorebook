@@ -1,11 +1,18 @@
 Choroku::Application.routes.draw do
-  resources :rewards
+  resources :children do
+     resources :rewards
+     resources :chores
+   end
 
-  resources :chores
+   match 'children/:children_id/chores/:id/complete' => 'chores#complete', :as => :complete_chore
+   match 'children/:children_id/chores/:id/delete' => 'chores#delete', :as => :delete_chore
 
-  resources :children
-  
-  root to: 'children#index'
+
+   match 'children/:children_id/rewards/:id/rewarded' => 'rewards#complete', :as => :complete_reward
+   match 'children/:children_id/rewards/:id/delete' => 'rewards#delete', :as => :delete_reward
+
+
+   root to: 'children#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,4 +1,7 @@
 class ChildrenController < ApplicationController
+  
+  
+  
   # GET /children
   # GET /children.json
   def index
@@ -25,8 +28,7 @@ class ChildrenController < ApplicationController
   # GET /children/new.json
   def new
     @child = Child.new
-
-    respond_to do |format|
+      respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @child }
     end
@@ -80,4 +82,5 @@ class ChildrenController < ApplicationController
       format.json { head :no_content }
     end
   end
+ 
 end

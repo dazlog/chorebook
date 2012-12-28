@@ -1,4 +1,8 @@
 class ChoresController < ApplicationController
+  
+  attr_accessor :completed
+  
+  
   # GET /chores
   # GET /chores.json
   def index
@@ -25,7 +29,6 @@ class ChoresController < ApplicationController
   # GET /chores/new.json
   def new
     @chore = Chore.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @chore }
@@ -40,15 +43,16 @@ class ChoresController < ApplicationController
   # POST /chores
   # POST /chores.json
   def create
-    @chore = Chore.new(params[:chore])
+    @child = Child.find(params[:child_id])
+    @chore = @child.chores.new(params[:chore])
 
     respond_to do |format|
       if @chore.save
-        format.html { redirect_to @chore, notice: 'Chore was successfully created.' }
-        format.json { render json: @chore, status: :created, location: @chore }
+        format.html { redirect_to child_url(@child), notice: 'Chore was successfully created.' }
+        #figure out the json l8ter
       else
-        format.html { render action: "new" }
-        format.json { render json: @chore.errors, status: :unprocessable_entity }
+        format.html { redirect_to child_url(@child) }
+        #figure out the json l8ter
       end
     end
   end
@@ -71,13 +75,31 @@ class ChoresController < ApplicationController
 
   # DELETE /chores/1
   # DELETE /chores/1.json
-  def destroy
-    @chore = Chore.find(params[:id])
-    @chore.destroy
-
-    respond_to do |format|
-      format.html { redirect_to chores_url }
-      format.json { head :no_content }
-    end
+  # def destroy
+  #     @chore = Chore.find(params[:id])
+  #     @chore.destroy
+  # 
+  #     respond_to do |format|
+  #       format.html { redirect_to chores_url }
+  #       format.json { head :no_content }
+  #     end
+  #   end
+  
+  def complete
+    @child = Child.find(params[:children_id])
+    @chore = @child.chores.find(params[:id])
+    @chore.completed = true
+    @chore.save
+    redirect_to child_url(@child), notice: 'Chore was successfully completed'
   end
+  
+  
+  def delete
+    @child = Child.find(params[:children_id])
+    @chore = @child.chores.find(params[:id])
+    @chore.destroy
+    redirect_to child_url(@child)
+  end
+  
+  
 end
