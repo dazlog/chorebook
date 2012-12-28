@@ -3,7 +3,7 @@
 
 #top-bar {
   background: #2B2B2B;
-  color: white;
+  color: #fff;
   height: 10px;
   position: fixed;
   left: 0;
@@ -13,7 +13,7 @@
 }
 
 #top-bar a {
-  color: white;fin
+  color: white;
 }
 
 #top-bar a:hover, a.menu-button {

@@ -3,7 +3,7 @@
 
 #site-footer {
   background: #2B2B2B;
-  color: white;
+  color: #fff;
   text-align: center;
 }
 
@@ -58,7 +58,7 @@
 .secondary-footer {
   padding: 24px 0 36px;
   border-top: 1px solid #555;
-  color: white;
+  color: #fff;
   font-size: 14px;
 }
 
@@ -109,7 +109,7 @@
   .secondary-footer {
     padding: 40px 0;
     border-top: 1px solid #555;
-    color: white;
+    color: #fff;
     font-size: 14px;
   }
 

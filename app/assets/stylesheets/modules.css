@@ -20,7 +20,7 @@ stuff used all over the site
 }
 
 #content {
-  background: white;
+  background: #fff;
 }
 
 .group-title {
@@ -59,7 +59,7 @@ stuff used all over the site
 }
 
 .site-title a {
-  color: white;
+  color: #fff;
 }
 
 .site-title a:hover, #site-footer a:hover {
