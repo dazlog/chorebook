@@ -52,7 +52,7 @@
 	<div class="voices-group article-item">
     <div class="article-item-content">
       
-      <%# image_tag @child.image_url(:thumb), class: "feature" %>
+      <%= image_tag @child.image_url(:thumb), class: "feature" %>
 		  <%= @child.name %>
 	    aged: <%= @child.age %>   |
 	    <%= link_to (image_tag 'edit_16.png'), edit_child_path(@child) %> 

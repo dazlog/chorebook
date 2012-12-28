@@ -6,7 +6,7 @@ class Reward < ActiveRecord::Base
   
   belongs_to :child
   
-  # mount_uploader :image, ImageUploader
+  mount_uploader :image, ImageUploader
   
   scope :completed, where(:rewarded => true)
   scope :incomplete, where(:rewarded => false)

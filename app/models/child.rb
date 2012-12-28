@@ -10,7 +10,7 @@ class Child < ActiveRecord::Base
   has_many :rewards
   has_many :chores
   
-  # mount_uploader :image, ImageUploader
+  mount_uploader :image, ImageUploader
   
   
   # sort this out in the morning so you're not repeating but this will work as quick hack
