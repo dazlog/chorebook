@@ -4,6 +4,8 @@ Choroku::Application.routes.draw do
   resources :chores
 
   resources :children
+  
+  root to: 'children#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
