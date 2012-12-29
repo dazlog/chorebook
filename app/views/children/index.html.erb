@@ -1,24 +1,108 @@
-<div class="hero-unit">
-	<h3>Children</h3>
+
+
+<div id="content" class="clearfix">
+
+<div class="main-col">
+	<div class="voices-group article-item">
+    <div class="article-item-content"> 
+	   <h2 class="tits">Children</h2>
+      <% @children.each do |child| %>
+			 <ul>
+				 <div class="article-item-content"> 
+				  <li class="user-component"><%= image_tag (child.image_url(:thumb)), class: "feature" %></li>
+			    <span class="fullname"><%= link_to child.name, child_path(child) %></span>
+			    <%= child.age %> years old
+			    <span class="admin">
+			    <%= link_to (image_tag 'edit_16.png'), edit_child_path(child) %>
+			    <%= link_to (image_tag'1354409256_delete.png'), child, method: :delete, data: { confirm: 'Are you sure?' } %>
+			    </span>
+			   <span id="child_bank">Current bank: <%= child.bank %></span>
+			   <%= child.total %>
+			</div>
+			  </ul>
+			<% end %>
+    </div>
+  </div>
+
+			<div class="js-masonry">
+		      <div class="voices-group article-item">
+		        <div class="article-item-content">
+		          <%= link_to 'Add Child', new_child_path, class: 'view-more-button button' %>
+        </div>
+      </div>
+     
+              
+        </div>
+      </div>
+  </div>
+
+</div> 
+
+</div> 
+
+
+
+
+
+
 
 	
-<% @children.each do |child| %>
- <div class="well">
-	  <%# image_tag (child.image_url(:thumb)), class: "feature" %>
-    <%= link_to child.name, child_path(child) %>
-    <%= child.age %> years old
-    <span class="admin">
-    <%= link_to (image_tag 'edit_16.png'), edit_child_path(child) %>
-    <%= link_to (image_tag'1354409256_delete.png'), child, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </span>
-   <span id="child_bank">Current bank: <%= child.bank %></span>
-   <%= child.total %>
- </div>  
-<% end %>
-
-	<div class="well"><%= link_to 'Add Child', new_child_path %></div>
 
 
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
 
 

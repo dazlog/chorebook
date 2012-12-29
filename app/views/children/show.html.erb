@@ -1,57 +1,8 @@
-
-
-
-
-
-
-
-
-
-<body class="new-voices-page en">
-
-<header id="top-bar">
-  <div class="main-col">
-
-    <a href="#menu" class="menu-button">Menu</a>
-
-  </div>
-</header>
-<header id="page-header">
-  <div class="main-col">
-    <div id="menu">
-      <ul class="site-nav clearfix">
-        <!-- <li class="nav-golden"><a href="./golden-tweets.html">Golden Tweets</a></li>
-               <li class="nav-pulse"><a href="./pulse-of-the-planet.html">Pulse of the planet</a></li> -->
-        <!-- <li class="nav-only"><a href="./only-on-twitter.html">Only on Twitter</a></li> -->
-                <li class="nav-trends"><a href="./trends.html">Children</a></li>
-                <li class="nav-voices"><a href="./new-voices.html">Chores</a></li> 
-        <li class="nav-my"><a href="./your-year.html?section=new-voices">Rewards</a></li>
-      </ul>
-    </div>
-    <h1 id="page-title">Chorebook</h1>
-    <div id="desktop-nav">
-      <ul class="site-nav clearfix">
-        <!-- <li class="nav-golden"><a href="./golden-tweets.html">Golden Tweets</a></li>
-               <li class="nav-pulse"><a href="./pulse-of-the-planet.html">Pulse of the planet</a></li> -->
-        <li class="nav-only"><a href="./only-on-twitter.html">Children</a></li>
-        <li class="nav-trends"><a href="./trends.html">Chores</a></li>
-        <li class="nav-voices"><a href="./new-voices.html">Rewards</a></li>
-        <li class="nav-my"><a href="./your-year.html?section=new-voices">Logout</a></li>
-      </ul>
-    </div>
-  </div>
-</header>
-
-
-
 <div id="content" class="clearfix">
 
 <div class="main-col">
-
-
 	<div class="voices-group article-item">
-    <div class="article-item-content">
-      
+    <div class="article-item-content"> 
       <%= image_tag @child.image_url(:thumb), class: "feature" %>
 		  <%= @child.name %>
 	    aged: <%= @child.age %>   |
@@ -159,41 +110,6 @@
 </div> 
 
 
-<footer id="site-footer">
-
-  <div class="primary-footer">
-    <div class="main-col">
-
-      <div class="past-years-aligner">
-        <div class="site-title">
-          <a href="../">
-            
-            <span class="site-title-text">Chorebook</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="nav link-list">
-        <ul class="site-nav clearfix">
-          <li class="nav-golden"><a href="./golden-tweets.html">Page 1</a></li>
-          <li class="nav-pulse"><a href="./pulse-of-the-planet.html">Page 3</a></li>
-          <li class="nav-only"><a href="./only-on-twitter.html">Page 4</a></li>
-          <li class="nav-trends"><a href="./trends.html">Page 5</a></li>
-          <li class="nav-voices"><a href="./new-voices.html">Page 6</a></li>
-          <li class="nav-my"><a href="./your-year.html?section=new-voices">Some blah</a></li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="secondary-footer">
-    <div class="main-col">
-      <p class="copyright">&copy; 2012 Chorebook</p>   
-    </div>
-  </div>
-
-</footer>
 
 
 
