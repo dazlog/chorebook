@@ -74,7 +74,7 @@
 										<span class="screen-name"><%= chore.due_date.strftime("due: %A") %></span>  
 										<span class="admin"><%# link_to image_tag("tick.png"), complete_chore_path(@child.id, chore.id) %>
 										<%= link_to (image_tag'1354409256_delete.png'), delete_chore_path(@child.id, chore.id) %>
-										</span><a href="" class="lazy-twitter-follow-button" data-show-count="false" data-lang="en" data-size="large" data-show-screen-name="false" data-twitter-lazy-load="twitter-follow-button"><%= button_to "+#{chore.points} pts", "#", class: "done_but" %></a></li>
+										</span><a href="" class="lazy-twitter-follow-button" data-show-count="false" data-lang="en" data-size="large" data-show-screen-name="false" data-twitter-lazy-load="twitter-follow-button"><%= button_to "+#{chore.points} pts", complete_chore_path(@child.id, chore.id), class: "done_but" %></a></li>
 							  	<% end %>
 								</ul>
               
@@ -118,7 +118,7 @@
 												<span class="fullname"><%= reward.name %></span>  
 												<span class="admin"><%# link_to image_tag("tick.png"), complete_chore_path(@child.id, chore.id) %>
 												<%= link_to (image_tag'1354409256_delete.png'), delete_reward_path(@child.id, reward.id) %>
-												</span><a href="" class="lazy-twitter-follow-button" data-show-count="false" data-lang="en" data-size="large" data-show-screen-name="false" data-twitter-lazy-load="twitter-follow-button"><%= button_to "-#{reward.costs} pts", "#", class: "done_but" %></a></li>
+												</span><a href="" class="lazy-twitter-follow-button" data-show-count="false" data-lang="en" data-size="large" data-show-screen-name="false" data-twitter-lazy-load="twitter-follow-button"><%= button_to "-#{reward.costs} pts", complete_reward_path(@child.id, reward.id), class: "done_but" %></a></li>
 									  	<% end %>
 										</ul>
 
